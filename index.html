@@ -40,28 +40,6 @@
             /* Căn giữa logo và chữ theo chiều dọc */
         }
 
-        @media (min-width: 1024px) {
-
-            /* Thêm điều chỉnh cho màn hình lớn */
-            .left-logo {
-                left: -100px;
-                bottom: -80px;
-                font-size: 240px;
-            }
-
-            .text-center {
-                text-align: center;
-                width: 100%;
-                margin: 0 auto;
-            }
-
-            .right-logo {
-                right: -100px;
-                bottom: -80px;
-                font-size: 240px;
-            }
-        }
-
         .left-logo img {
             width: 30px;
             /* Thu nhỏ logo */
@@ -81,21 +59,6 @@
         .text-center {
             text-align: center;
         }
-
-        /*.right-logo {
-            position: absolute;
-            /* Đặt vị trí tuyệt đối cho logo */
-        /* left: 500px; */
-        /* Cách bên trái 10px (có thể tùy chỉnh) */
-        /* bottom: -30px; */
-        /* Cách đáy 10px (có thể tùy chỉnh) */
-        /* z-index: 9999; */
-        /* Đảm bảo logo hiển thị trên các phần tử khác */
-        /* display: flex; */
-        /* Dùng flexbox để căn chỉnh logo và chữ nằm ngang */
-        /* align-items: center; */
-        /* Căn giữa logo và chữ theo chiều dọc */
-        /*}*/
 
         .right-logo {
             position: absolute;
@@ -128,6 +91,29 @@
             /* Điều chỉnh kích thước chữ */
             font-weight: bold;
         }
+
+        @media (min-width: 1024px) {
+
+            /* Thêm điều chỉnh cho màn hình lớn */
+            .left-logo {
+                left: -100px;
+                bottom: -80px;
+                font-size: 240px;
+            }
+
+            .text-center {
+                text-align: center;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .right-logo {
+                right: 100px;
+                bottom: -80px;
+                font-size: 240px;
+            }
+        }
+
     </style>
 </head>
 
