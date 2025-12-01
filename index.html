@@ -26,35 +26,44 @@
         }
 
         .left-logo {
-    position: absolute;
-    /* Đặt vị trí tuyệt đối cho logo */
-    left: 10px;
-    /* Cách bên trái 10px (có thể tùy chỉnh) */
-    bottom: -30px;
-    /* Cách đáy 10px (có thể tùy chỉnh) */
-    z-index: 10;
-    /* Đảm bảo logo hiển thị trên các phần tử khác */
-    display: flex;
-    /* Dùng flexbox để căn chỉnh logo và chữ nằm ngang */
-    align-items: center;
-    /* Căn giữa logo và chữ theo chiều dọc */
-}
+            position: absolute;
+            /* Đặt vị trí tuyệt đối cho logo */
+            left: 10px;
+            /* Cách bên trái 10px (có thể tùy chỉnh) */
+            bottom: -30px;
+            /* Cách đáy 10px (có thể tùy chỉnh) */
+            z-index: 10;
+            /* Đảm bảo logo hiển thị trên các phần tử khác */
+            display: flex;
+            /* Dùng flexbox để căn chỉnh logo và chữ nằm ngang */
+            align-items: center;
+            /* Căn giữa logo và chữ theo chiều dọc */
+        }
 
-.left-logo img {
-    width: 30px;
-    /* Thu nhỏ logo */
-    height: 30px;
-    /* Thu nhỏ logo */
-    margin-right: 8px;
-    /* Tạo khoảng cách giữa logo và chữ */
-}
+        @media (min-width: 1024px) {
 
-.left-logo span {
-    color: white;
-    font-size: 16px;
-    /* Điều chỉnh kích thước chữ */
-    font-weight: bold;
-}
+            /* Thêm điều chỉnh cho màn hình lớn */
+            .left-logo {
+                left: 20px;
+                bottom: 20px;
+            }
+        }
+
+        .left-logo img {
+            width: 30px;
+            /* Thu nhỏ logo */
+            height: 30px;
+            /* Thu nhỏ logo */
+            margin-right: 8px;
+            /* Tạo khoảng cách giữa logo và chữ */
+        }
+
+        .left-logo span {
+            color: white;
+            font-size: 16px;
+            /* Điều chỉnh kích thước chữ */
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -66,7 +75,8 @@
         <div class="relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-7xl px-4">
             <!-- Left Logo -->
             <div class="left-logo">
-                <img src="data:image/png;base64,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" alt="CL Emoji"> <!-- Logo CL -->
+                <img src="data:image/png;base64,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"
+                    alt="CL Emoji"> <!-- Logo CL -->
                 <span class="text-white text-lg md:text-xl font-semibold tracking-wider">Chanel</span>
                 <span class="text-white text-lg md:text-xl font-semibold tracking-wider">Lou</span>
             </div>
