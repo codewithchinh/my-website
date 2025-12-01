@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VNEXPRESS - News Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .banner-bg {
+            background-image: url('https://picsum.photos/id/1060/1920/300'); /* Placeholder for the complex banner background */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+
+    <!-- Top Banner Ad -->
+    <header class="relative w-full h-40 md:h-60 lg:h-72 overflow-hidden banner-bg flex items-center justify-center">
+        <div class="absolute inset-0 bg-gradient-to-r from-amber-900/70 via-amber-700/50 to-amber-900/70"></div>
+        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-7xl px-4">
+            <!-- Left Logo -->
+            <div class="flex flex-col items-center md:items-start mb-4 md:mb-0">
+                <img src="https://picsum.photos/id/68/80/80" alt="Rivea Logo" class="h-12 md:h-16 mb-2">
+                <span class="text-white text-lg md:text-xl font-semibold tracking-wider">RIVEA</span>
+                <span class="text-white text-xs md:text-sm tracking-widest">RESIDENCES</span>
+            </div>
+
+            <!-- Center Text -->
+            <div class="text-center mb-4 md:mb-0">
+                <h1 class="text-white text-xl md:text-3xl font-bold mb-1">Khởi nguyên</h1>
+                <p class="text-white text-2xl md:text-4xl font-extrabold tracking-wide">DÒNG CHẢY TINH HOA</p>
+            </div>
+
+            <!-- Right Image (Buildings) -->
+            <div class="hidden md:block">
+                <img src="https://picsum.photos/id/1060/250/200" alt="Modern Buildings" class="h-32 md:h-48 object-cover rounded-lg shadow-lg">
+            </div>
+        </div>
+        <!-- Bottom Product Info -->
+        <div class="absolute bottom-4 right-4 md:bottom-8 md:left-1/2 md:-translate-x-1/2 flex items-center bg-black/30 px-4 py-2 rounded-full">
+            <span class="text-white text-xs md:text-sm mr-2">Một sản phẩm của</span>
+            <img src="https://picsum.photos/id/66/60/30" alt="Meygroup Logo" class="h-4 md:h-5">
+        </div>
+    </header>
+
+    <!-- Main Navigation Bar -->
+    <nav class="bg-white shadow-sm py-3 border-b border-gray-200">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+            <!-- Left: Logo and Date -->
+            <div class="flex items-center mb-3 md:mb-0">
+                <a href="#" class="flex flex-col items-center md:items-start mr-6">
+                    <span class="text-red-600 text-2xl font-extrabold mr-1">VN<span class="inline-block border-2 border-red-600 px-0.5 rounded-sm">E</span>XPRESS</span>
+                    <span class="text-gray-500 text-xs mt-0.5">Báo tiếng Việt nhiều người xem nhất</span>
+                </a>
+                <span class="text-gray-600 text-sm hidden md:block">Thứ ba, 2/12/2025</span>
+            </div>
+
+            <!-- Right: Nav Links and Icons -->
+            <div class="flex items-center space-x-4 text-sm">
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Mới nhất</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Tin theo khu vực</a>
+                <a href="#" class="flex items-center text-gray-700 hover:text-red-600 whitespace-nowrap">
+                    <span class="text-red-600 mr-1">🌐</span> International
+                </a>
+                <button class="text-gray-700 hover:text-red-600">🔍</button>
+                <a href="#" class="flex items-center text-gray-700 hover:text-red-600 whitespace-nowrap">
+                    <span class="mr-1">👤</span> Đăng nhập
+                </a>
+                <button class="text-gray-700 hover:text-red-600">🔔</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Secondary Navigation Bar -->
+    <nav class="bg-white py-2 shadow-sm border-b border-gray-200">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center space-x-4 md:space-x-6 overflow-x-auto no-scrollbar py-1">
+                <a href="#" class="flex items-center text-gray-700 hover:text-red-600 whitespace-nowrap">
+                    <span class="mr-1">🏠</span> VnE-GO
+                    <span class="relative flex h-2 w-2 ml-1">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                    </span>
+                </a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Thời sự</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Thế giới</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Kinh doanh</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Khoa học công nghệ</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Góc nhìn</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Bất động sản</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Sức khỏe</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Thể thao</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Giải trí</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Pháp luật</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Giáo dục</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Đời sống</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Xe</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Du lịch</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Ý kiến</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Tâm sự</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Thư giãn</a>
+            </div>
+            <div class="flex items-center ml-4 space-x-2">
+                <button class="text-gray-700 hover:text-red-600 text-xl">☰</button>
+                <button class="text-gray-700 hover:text-red-600 text-xl">❯</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4 py-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Left Article (Large Image + Text) -->
+            <article class="lg:col-span-2 bg-white rounded-lg overflow-hidden">
+                <img src="https://picsum.photos/id/64/800/500" alt="Man in suit" class="w-full h-auto object-cover mb-4 rounded-t-lg">
+                <div class="p-4">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-3 leading-tight">Khai báo một lần cho tất cả dịch vụ công</h2>
+                    <p class="text-gray-700 text-base md:text-lg mb-4">
+                        Bộ trưởng Nguyễn Mạnh Hùng nói Luật Chuyển đổi số áp dụng nguyên tắc khai báo một lần, dữ liệu liên thông giúp người dân giảm giấy tờ và dùng dịch vụ công thuận tiện.
+                    </p>
+                    <p class="text-gray-600 text-sm md:text-base mb-4">
+                        Chiều 1/12, giải trình trước Quốc hội về dự án Luật Chuyển đổi số, Bộ trưởng Bộ Khoa học và Công nghệ Nguyễn Mạnh ...
+                    </p>
+                    <a href="#" class="text-red-600 hover:underline text-sm md:text-base font-semibold">Thời sự</a>
+                </div>
+            </article>
+
+            <!-- Right Article (Smaller Image) -->
+            <aside class="lg:col-span-1 bg-white rounded-lg overflow-hidden">
+                <img src="https://picsum.photos/id/1060/400/600" alt="Building with balconies" class="w-full h-auto object-cover rounded-lg">
+            </aside>
+        </div>
+    </main>
+
+    <!-- Scroll to Top Button -->
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+            class="fixed bottom-8 right-8 bg-gray-700 text-white p-3 rounded-full shadow-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition-all duration-300">
+        <span class="text-xl">⬆</span>
+    </button>
+
+</body>
+</html>
