@@ -39,6 +39,16 @@
 
         /* Font chữ giống báo chí */
         .font-merriweather { font-family: 'Merriweather', serif; }
+        
+        /* Dropdown Animation */
+        .group:hover .group-hover\:block {
+            display: block;
+            animation: fadeIn 0.2s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
@@ -49,8 +59,9 @@
         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
         
         <div class="relative z-10 flex flex-col items-center w-full max-w-7xl px-4 text-center">
-            <h1 class="text-white text-2xl md:text-5xl font-bold mb-2 drop-shadow-lg uppercase font-merriweather">CLouvie FC VIET NAM</h1>
-            <p class="text-white text-lg md:text-2xl font-light tracking-[0.2em] drop-shadow-md">CLou's fanpage in VN</p>
+            <h1 class="text-pink-500 text-2xl md:text-5xl font-bold mb-2 drop-shadow-lg uppercase font-merriweather">CLouvie FC VIET NAM</h1>
+            <!-- <p class="text-pink-500 text-lg md:text-2xl font-light tracking-[0.2em] drop-shadow-md ">CLou's fanpage in VN</p> -->
+             <p class="absolute top-full mt-4 w-full text-pink-500 text-lg md:text-2xl font-bold tracking-[0.2em]">CLOU'S FANPAGE IN VN</p>
         </div>
 
         <div class="left-logo">
@@ -68,6 +79,7 @@
     </header>
 
     <div class="sticky top-0 z-[100] bg-white border-b border-gray-200 shadow-sm">
+        <!-- Top Bar -->
         <div class="container mx-auto px-4 py-2 flex items-center justify-between">
             <a href="#" class="flex items-end group">
                 <span class="text-[#9f224e] text-3xl font-black tracking-tighter group-hover:opacity-80 transition">VN<span class="inline-block border-[2px] border-[#9f224e] px-0.5 rounded-[1px] text-[0.8em] align-middle mx-[1px]">E</span>XPRESS</span>
@@ -76,116 +88,223 @@
             <div class="flex items-center text-sm text-gray-600 gap-4">
                 <span class="hidden md:inline border-r pr-4">Thứ ba, 2/12/2025</span>
                 <a href="#" class="hover:text-[#9f224e] flex items-center gap-1"><span class="text-xs">⚡</span> Mới nhất</a>
-                <a href="#" class="hover:text-[#9f224e] hidden sm:block">International</a>
-                <button class="hover:text-[#9f224e] text-lg">🔍</button>
-                <a href="#" class="border border-gray-300 px-3 py-1 rounded text-xs hover:bg-gray-50">Đăng nhập</a>
+                <a href="#" class="border border-[#9f224e] text-[#9f224e] px-4 py-1 rounded hover:bg-[#9f224e] hover:text-white transition font-bold text-xs">Đăng nhập</a>
             </div>
         </div>
 
-        <nav class="border-t border-gray-100">
+        <!-- Main Navigation with Dropdowns -->
+        <nav class="border-t border-gray-100 bg-white">
             <div class="container mx-auto px-0 md:px-4">
-                <div class="flex items-center justify-between">
-                    <a href="#" class="p-3 border-b-2 border-[#9f224e] bg-gray-50 hover:bg-gray-100 transition">
-                        <svg class="w-5 h-5 text-[#9f224e]" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
-                    </a>
+                <ul class="flex items-center justify-center md:justify-start gap-1 md:gap-6 text-[14px] font-bold text-gray-700 overflow-x-auto no-scrollbar">
+                    <li class="p-3"><a href="#" class="hover:text-[#9f224e]"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg></a></li>
                     
-                    <div class="flex-1 overflow-x-auto no-scrollbar flex items-center text-[14px] font-medium text-gray-700">
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Thời sự</a>
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Góc nhìn</a>
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Thế giới</a>
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Kinh doanh</a>
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Bất động sản</a>
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Khoa học</a>
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Giải trí</a>
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Thể thao</a>
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Pháp luật</a>
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Giáo dục</a>
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Sức khỏe</a>
-                    </div>
+                    <!-- Category 1: Thời sự -->
+                    <li class="group relative py-3">
+                        <a href="#" class="px-2 py-3 hover:text-[#9f224e] uppercase whitespace-nowrap flex items-center gap-1">
+                            Thời sự <span class="text-[10px]">▼</span>
+                        </a>
+                        <div class="hidden group-hover:block absolute left-0 top-full w-48 bg-white shadow-xl border-t-2 border-[#9f224e] rounded-b-lg z-50">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal border-b border-gray-50">Chính trị</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal border-b border-gray-50">Dân sinh</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal border-b border-gray-50">Giao thông</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal border-b border-gray-50">Lao động</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal">Môi trường</a>
+                        </div>
+                    </li>
 
-                    <button class="p-3 text-gray-500 hover:text-[#9f224e]">
-                        ☰ <span class="text-xs hidden md:inline ml-1">Tất cả</span>
-                    </button>
-                </div>
+                    <!-- Category 2: Kinh doanh -->
+                    <li class="group relative py-3">
+                        <a href="#" class="px-2 py-3 hover:text-[#9f224e] uppercase whitespace-nowrap flex items-center gap-1">
+                            Kinh doanh <span class="text-[10px]">▼</span>
+                        </a>
+                        <div class="hidden group-hover:block absolute left-0 top-full w-48 bg-white shadow-xl border-t-2 border-[#9f224e] rounded-b-lg z-50">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal border-b border-gray-50">Quốc tế</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal border-b border-gray-50">Doanh nghiệp</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal border-b border-gray-50">Chứng khoán</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal border-b border-gray-50">Bất động sản</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal">E-commerce</a>
+                        </div>
+                    </li>
+
+                    <!-- Category 3: Công nghệ -->
+                    <li class="group relative py-3">
+                        <a href="#" class="px-2 py-3 hover:text-[#9f224e] uppercase whitespace-nowrap flex items-center gap-1">
+                            Công nghệ <span class="text-[10px]">▼</span>
+                        </a>
+                        <div class="hidden group-hover:block absolute left-0 top-full w-48 bg-white shadow-xl border-t-2 border-[#9f224e] rounded-b-lg z-50">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal border-b border-gray-50">Mobile</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal border-b border-gray-50">AI & Robot</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal border-b border-gray-50">Blockchain</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal border-b border-gray-50">Startup</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal">Gadgets</a>
+                        </div>
+                    </li>
+
+                    <!-- Category 4: Thể thao -->
+                    <li class="group relative py-3">
+                        <a href="#" class="px-2 py-3 hover:text-[#9f224e] uppercase whitespace-nowrap flex items-center gap-1">
+                            Thể thao <span class="text-[10px]">▼</span>
+                        </a>
+                        <div class="hidden group-hover:block absolute left-0 top-full w-48 bg-white shadow-xl border-t-2 border-[#9f224e] rounded-b-lg z-50">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal border-b border-gray-50">Bóng đá VN</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal border-b border-gray-50">Bóng đá QT</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal border-b border-gray-50">Tennis</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal border-b border-gray-50">Marathon</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal">Golf</a>
+                        </div>
+                    </li>
+
+                    <!-- Category 5: Giải trí -->
+                    <li class="group relative py-3">
+                        <a href="#" class="px-2 py-3 hover:text-[#9f224e] uppercase whitespace-nowrap flex items-center gap-1">
+                            Giải trí <span class="text-[10px]">▼</span>
+                        </a>
+                        <div class="hidden group-hover:block absolute left-0 top-full w-48 bg-white shadow-xl border-t-2 border-[#9f224e] rounded-b-lg z-50">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal border-b border-gray-50">Giới Sao</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal border-b border-gray-50">Âm nhạc</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal border-b border-gray-50">Phim ảnh</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal border-b border-gray-50">Thời trang</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#9f224e] font-normal">Sách</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </nav>
     </div>
 
+    <!-- MAIN CONTENT -->
     <main class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
             
+            <!-- LEFT COLUMN: NEWS LIST (9/12) -->
             <div class="lg:col-span-9">
-                <section class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-8 border-b border-gray-200 pb-8">
-                    <div class="md:col-span-8 group cursor-pointer">
-                        <div class="overflow-hidden rounded bg-gray-100">
-                            <img src="https://picsum.photos/id/64/800/500" alt="Top Story" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500 ease-in-out">
+                
+                <!-- SECTION: NEWEST ARTICLE (BIG) -->
+                <section class="mb-10 border-b border-gray-200 pb-10">
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                        <!-- Image Side -->
+                        <div class="md:col-span-8 group cursor-pointer relative overflow-hidden rounded-lg shadow-sm">
+                            <span class="absolute top-4 left-4 bg-[#9f224e] text-white text-xs font-bold px-3 py-1 rounded z-10 uppercase">Mới nhất</span>
+                            <img src="https://picsum.photos/id/64/800/500" alt="Top Story" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700 ease-in-out">
                         </div>
-                    </div>
-                    <div class="md:col-span-4 flex flex-col justify-start">
-                        <h2 class="text-2xl md:text-3xl font-black font-merriweather leading-tight mb-3 hover:text-[#9f224e] cursor-pointer">
-                            Khai báo một lần cho tất cả dịch vụ công quốc gia
-                        </h2>
-                        <p class="text-gray-600 text-[15px] leading-relaxed mb-4">
-                            Bộ trưởng Nguyễn Mạnh Hùng nhấn mạnh Luật Chuyển đổi số áp dụng nguyên tắc "khai báo một lần", dữ liệu liên thông giúp giảm tải giấy tờ.
-                        </p>
-                        <div class="mt-auto pt-4 border-t border-gray-100">
-                            <span class="text-[#9f224e] font-bold text-xs uppercase tracking-wider">Thời sự</span>
-                            <span class="text-gray-400 text-xs ml-2">2 giờ trước</span>
+                        
+                        <!-- Content Side -->
+                        <div class="md:col-span-4 flex flex-col justify-center">
+                            <h2 class="text-3xl md:text-4xl font-black font-merriweather leading-tight mb-4 hover:text-[#9f224e] cursor-pointer">
+                                Khai báo một lần cho tất cả dịch vụ công quốc gia
+                            </h2>
+                            <p class="text-gray-600 text-base leading-relaxed mb-6">
+                                Bộ trưởng Nguyễn Mạnh Hùng nhấn mạnh Luật Chuyển đổi số áp dụng nguyên tắc "khai báo một lần", dữ liệu liên thông giúp giảm tải giấy tờ cho người dân.
+                            </p>
+                            <div class="mt-auto">
+                                <span class="text-[#9f224e] font-bold text-xs uppercase tracking-wider">Thời sự</span>
+                                <span class="text-gray-400 text-xs ml-2">• 30 phút trước</span>
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                <section class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                    <article class="flex flex-col group">
-                        <div class="overflow-hidden rounded mb-3 h-40">
-                             <img src="https://picsum.photos/id/1015/400/250" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                <!-- SECTION: OLDER ARTICLES (SORTED BY TIME) -->
+                <h3 class="text-xl font-bold border-l-4 border-[#9f224e] pl-3 mb-6 uppercase">Tin vừa qua</h3>
+                <div class="flex flex-col gap-8">
+                    
+                    <!-- Article 2 -->
+                    <article class="flex flex-col sm:flex-row gap-4 group border-b border-gray-100 pb-6">
+                        <div class="sm:w-1/3 overflow-hidden rounded h-48 sm:h-auto">
+                            <img src="https://picsum.photos/id/1015/400/250" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         </div>
-                        <h3 class="font-bold text-lg leading-snug hover:text-[#9f224e]">
-                            Thung lũng Silicon sa thải hàng loạt nhân sự AI
-                        </h3>
-                    </article>
-                    <article class="flex flex-col group">
-                        <div class="overflow-hidden rounded mb-3 h-40">
-                             <img src="https://picsum.photos/id/1025/400/250" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="sm:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-xl md:text-2xl leading-snug hover:text-[#9f224e] mb-2 font-merriweather">
+                                    Thung lũng Silicon sa thải hàng loạt nhân sự AI
+                                </h3>
+                                <p class="text-gray-600 text-sm line-clamp-2 mb-2">Các công ty công nghệ lớn đang tái cơ cấu nhân sự, tập trung vào các mô hình AI tạo sinh hiệu quả hơn thay vì số lượng nhân sự lớn.</p>
+                            </div>
+                            <div class="text-xs text-gray-400">Công nghệ • 1 giờ trước</div>
                         </div>
-                        <h3 class="font-bold text-lg leading-snug hover:text-[#9f224e]">
-                            Giá xăng dầu tiếp tục giảm sâu phiên thứ 3
-                        </h3>
                     </article>
-                    <article class="flex flex-col group">
-                        <div class="overflow-hidden rounded mb-3 h-40">
-                             <img src="https://picsum.photos/id/1035/400/250" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+
+                    <!-- Article 3 -->
+                    <article class="flex flex-col sm:flex-row gap-4 group border-b border-gray-100 pb-6">
+                        <div class="sm:w-1/3 overflow-hidden rounded h-48 sm:h-auto">
+                            <img src="https://picsum.photos/id/1025/400/250" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         </div>
-                        <h3 class="font-bold text-lg leading-snug hover:text-[#9f224e]">
-                            Đội tuyển Việt Nam chốt danh sách đi châu Âu
-                        </h3>
+                        <div class="sm:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-xl md:text-2xl leading-snug hover:text-[#9f224e] mb-2 font-merriweather">
+                                    Giá xăng dầu tiếp tục giảm sâu phiên thứ 3 liên tiếp
+                                </h3>
+                                <p class="text-gray-600 text-sm line-clamp-2 mb-2">Thị trường năng lượng toàn cầu đang có dấu hiệu hạ nhiệt do nguồn cung dồi dào từ các nước OPEC+.</p>
+                            </div>
+                            <div class="text-xs text-gray-400">Kinh doanh • 2 giờ trước</div>
+                        </div>
                     </article>
-                </section>
+
+                    <!-- Article 4 -->
+                    <article class="flex flex-col sm:flex-row gap-4 group border-b border-gray-100 pb-6">
+                        <div class="sm:w-1/3 overflow-hidden rounded h-48 sm:h-auto">
+                            <img src="https://picsum.photos/id/1035/400/250" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="sm:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-xl md:text-2xl leading-snug hover:text-[#9f224e] mb-2 font-merriweather">
+                                    Đội tuyển Việt Nam chốt danh sách đi châu Âu tập huấn
+                                </h3>
+                                <p class="text-gray-600 text-sm line-clamp-2 mb-2">Huấn luyện viên trưởng đã công bố danh sách 23 cầu thủ sẽ tham gia chuyến tập huấn kéo dài 2 tuần tại Đức.</p>
+                            </div>
+                            <div class="text-xs text-gray-400">Thể thao • 3 giờ trước</div>
+                        </div>
+                    </article>
+
+                    <!-- Article 5 -->
+                    <article class="flex flex-col sm:flex-row gap-4 group border-b border-gray-100 pb-6">
+                        <div class="sm:w-1/3 overflow-hidden rounded h-48 sm:h-auto">
+                            <img src="https://picsum.photos/id/1045/400/250" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="sm:w-2/3 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-xl md:text-2xl leading-snug hover:text-[#9f224e] mb-2 font-merriweather">
+                                    Show diễn thời trang Thu Đông quy tụ dàn sao hạng A
+                                </h3>
+                                <p class="text-gray-600 text-sm line-clamp-2 mb-2">Sự kiện thời trang lớn nhất năm đã diễn ra tối qua với sự góp mặt của nhiều nghệ sĩ nổi tiếng trong và ngoài nước.</p>
+                            </div>
+                            <div class="text-xs text-gray-400">Giải trí • 4 giờ trước</div>
+                        </div>
+                    </article>
+
+                </div>
             </div>
 
+            <!-- RIGHT COLUMN: SIDEBAR (3/12) -->
             <aside class="lg:col-span-3 border-l border-gray-100 lg:pl-6 space-y-8">
                 
-                <div class="bg-gray-50 rounded p-2 text-center">
+                <!-- Ad -->
+                <div class="bg-gray-50 rounded p-2 text-center sticky top-24">
                     <span class="text-xs text-gray-400 block mb-1 text-right">Quảng cáo</span>
-                    <img src="https://picsum.photos/id/1060/300/500" alt="Vertical Ad" class="w-full h-auto object-cover rounded mx-auto hover:opacity-90 transition">
-                </div>
-
-                <div>
-                    <h4 class="text-[#9f224e] font-bold border-b-2 border-[#9f224e] inline-block mb-4 pb-1">Đọc nhiều</h4>
-                    <ul class="space-y-4">
-                        <li class="group border-b border-gray-100 pb-2">
-                            <span class="text-2xl font-bold text-gray-200 group-hover:text-[#9f224e] mr-2">1</span>
-                            <a href="#" class="text-gray-800 font-medium hover:text-[#9f224e]">Vụ án Vạn Thịnh Phát: Diễn biến mới nhất tại tòa</a>
-                        </li>
-                        <li class="group border-b border-gray-100 pb-2">
-                            <span class="text-2xl font-bold text-gray-200 group-hover:text-[#9f224e] mr-2">2</span>
-                            <a href="#" class="text-gray-800 font-medium hover:text-[#9f224e]">Giá vàng hôm nay bất ngờ quay đầu</a>
-                        </li>
-                        <li class="group border-b border-gray-100 pb-2">
-                            <span class="text-2xl font-bold text-gray-200 group-hover:text-[#9f224e] mr-2">3</span>
-                            <a href="#" class="text-gray-800 font-medium hover:text-[#9f224e]">Review iPhone 16: Có đáng nâng cấp?</a>
-                        </li>
-                    </ul>
+                    <img src="https://picsum.photos/id/1060/300/500" alt="Vertical Ad" class="w-full h-auto object-cover rounded mx-auto hover:opacity-90 transition mb-4">
+                    
+                    <!-- Most Read -->
+                    <div class="text-left">
+                        <h4 class="text-[#9f224e] font-bold border-b-2 border-[#9f224e] inline-block mb-4 pb-1 uppercase text-sm">Đọc nhiều nhất</h4>
+                        <ul class="space-y-4">
+                            <li class="group border-b border-gray-100 pb-2 flex gap-3">
+                                <span class="text-3xl font-black text-gray-200 group-hover:text-[#9f224e] leading-none">1</span>
+                                <a href="#" class="text-gray-800 font-medium hover:text-[#9f224e] text-sm">Vụ án Vạn Thịnh Phát: Diễn biến mới nhất tại tòa</a>
+                            </li>
+                            <li class="group border-b border-gray-100 pb-2 flex gap-3">
+                                <span class="text-3xl font-black text-gray-200 group-hover:text-[#9f224e] leading-none">2</span>
+                                <a href="#" class="text-gray-800 font-medium hover:text-[#9f224e] text-sm">Giá vàng hôm nay bất ngờ quay đầu giảm mạnh</a>
+                            </li>
+                            <li class="group border-b border-gray-100 pb-2 flex gap-3">
+                                <span class="text-3xl font-black text-gray-200 group-hover:text-[#9f224e] leading-none">3</span>
+                                <a href="#" class="text-gray-800 font-medium hover:text-[#9f224e] text-sm">Review iPhone 16: Có đáng nâng cấp không?</a>
+                            </li>
+                            <li class="group border-b border-gray-100 pb-2 flex gap-3">
+                                <span class="text-3xl font-black text-gray-200 group-hover:text-[#9f224e] leading-none">4</span>
+                                <a href="#" class="text-gray-800 font-medium hover:text-[#9f224e] text-sm">Lịch thi đấu bóng đá Ngoại hạng Anh tuần này</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </aside>
         </div>
