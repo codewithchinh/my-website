@@ -1,264 +1,200 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VNEXPRESS - News Portal</title>
+    <title>VNEXPRESS - News Portal Redesign</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* GIỮ NGUYÊN CSS BANNER CỦA BẠN */
         .banner-bg {
             position: relative;
             background-image: url('https://scontent.cdninstagram.com/v/t51.82787-15/551199762_17846294055569276_741117639464511513_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ig_cache_key=MzcyNDgxMzM5MTUxMDAyMDUyNQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE1OTh4ODk5LnNkci5DMyJ9&_nc_ohc=s-SUM6kM5bcQ7kNvwEkBLka&_nc_oc=Adlfl8-LYQVIB6VDN30OefK6hSLLPTvCqPPoQT4JVxGTH7m5t1la6WdQwwwjCGKFm5eM5DvLLPFtR19HoiFmG_nb&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=1L7ndc80dz5CCvYSlM_-tQ&oh=00_AfhY2aU4t0NfVIo0FFPcPnpTgjEiHFlsXRnK9jLV1gLsIA&oe=6933B2B9');
-            /* Placeholder for the complex banner background */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
 
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        .left-logo {
+        .left-logo, .right-logo {
             position: absolute;
-            /* Đặt vị trí tuyệt đối cho logo */
-            left: 10px;
-            /* Cách bên trái 10px (có thể tùy chỉnh) */
             bottom: -30px;
-            /* Cách đáy 10px (có thể tùy chỉnh) */
-            z-index: 9999;
-            /* Đảm bảo logo hiển thị trên các phần tử khác */
+            z-index: 50; /* Giảm z-index để không che menu */
             display: flex;
-            /* Dùng flexbox để căn chỉnh logo và chữ nằm ngang */
             align-items: center;
-            /* Căn giữa logo và chữ theo chiều dọc */
         }
-
-        .left-logo img {
-            width: 30px;
-            /* Thu nhỏ logo */
-            height: 30px;
-            /* Thu nhỏ logo */
-            margin-right: 8px;
-            /* Tạo khoảng cách giữa logo và chữ */
-        }
-
-        .left-logo span {
-            color: white;
-            font-size: 16px;
-            /* Điều chỉnh kích thước chữ */
-            font-weight: bold;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .right-logo {
-            position: absolute;
-            /* Đặt vị trí tuyệt đối cho logo */
-            right: 10px;
-            /* Cách bên phải 10px (có thể tùy chỉnh) */
-            bottom: -30px;
-            /* Cách đáy 10px (có thể tùy chỉnh) */
-            z-index: 9999;
-            /* Đảm bảo logo hiển thị trên các phần tử khác */
-            display: flex;
-            /* Dùng flexbox để căn chỉnh logo và chữ nằm ngang */
-            align-items: center;
-            /* Căn giữa logo và chữ theo chiều dọc */
-        }
-
-
-        .right-logo img {
-            width: 30px;
-            /* Thu nhỏ logo */
-            height: 30px;
-            /* Thu nhỏ logo */
-            margin-right: 8px;
-            /* Tạo khoảng cách giữa logo và chữ */
-        }
-
-        .right-logo span {
-            color: white;
-            font-size: 16px;
-            /* Điều chỉnh kích thước chữ */
-            font-weight: bold;
-        }
-
+        .left-logo { left: 10px; }
+        .right-logo { right: 10px; }
+        .left-logo img, .right-logo img { width: 30px; height: 30px; margin-right: 8px; }
+        
         @media (min-width: 1024px) {
-
-            /* Thêm điều chỉnh cho màn hình lớn */
-            .left-logo {
-                left: -100px;
-                bottom: -80px;
-                font-size: 240px;
-            }
-
-            .text-center {
-                text-align: center;
-                width: 100%;
-                margin: 0 auto;
-            }
-
-            .right-logo {
-                right: -50px;
-                bottom: -80px;
-                font-size: 240px;
-            }
+            .left-logo { left: 20px; bottom: 20px; } /* Chỉnh lại vị trí cho đẹp hơn */
+            .right-logo { right: 20px; bottom: 20px; }
+            .left-logo img, .right-logo img { width: 50px; height: 50px; } /* Logo to hơn trên PC */
+            .left-logo span, .right-logo span { font-size: 20px; }
         }
 
+        /* Font chữ giống báo chí */
+        .font-merriweather { font-family: 'Merriweather', serif; }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 
-<body class="font-sans antialiased text-gray-800 bg-gray-50">
+<body class="font-sans antialiased text-[#333] bg-[#fcfcfc]">
 
-    <!-- Top Banner Ad -->
-    <header class="relative w-full h-40 md:h-60 lg:h-72 overflow-hidden banner-bg flex items-center justify-center">
-        <div class="absolute inset-0 bg-gradient-to-r from-amber-900/70 via-amber-700/50 to-amber-900/70"></div>
-        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-7xl px-4">
-            <!-- Left Logo -->
-            <div class="left-logo">
-                <img src="data:image/png;base64,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"
-                    alt="CL Emoji"> <!-- Logo CL -->
-                <span class="text-white text-lg md:text-xl font-semibold tracking-wider">Chanel</span>
-                <span class="text-white text-lg md:text-xl font-semibold tracking-wider">Lou</span>
-            </div>
-
-            <!-- Right Logo -->
-            <div class="right-logo">
-                <img src="data:image/png;base64,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"
-                    alt="CL Emoji"> <!-- Logo CL -->
-                <span class="text-white text-lg md:text-xl font-semibold tracking-wider">可</span>
-                <span class="text-white text-lg md:text-xl font-semibold tracking-wider">楼</span>
-            </div>
-
-
-
-            <!-- Center Text -->
-            <div class="text-center mb-4 md:mb-0">
-                <h1 class="text-white text-xl md:text-3xl font-bold mb-1">CLouvie FC VIET NAM</h1>
-                <p class="text-white text-2xl md:text-4xl font-extrabold tracking-wide">CLou's fanpage in VN</p>
-            </div>
-
+    <header class="relative w-full h-48 md:h-72 lg:h-80 overflow-hidden banner-bg flex items-center justify-center shadow-md">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
+        
+        <div class="relative z-10 flex flex-col items-center w-full max-w-7xl px-4 text-center">
+            <h1 class="text-white text-2xl md:text-5xl font-bold mb-2 drop-shadow-lg uppercase font-merriweather">CLouvie FC VIET NAM</h1>
+            <p class="text-white text-lg md:text-2xl font-light tracking-[0.2em] drop-shadow-md">CLou's fanpage in VN</p>
         </div>
-        <!-- Bottom Product Info -->
-        <!-- 
-        <div
-            class="absolute bottom-4 right-4 md:bottom-8 md:left-1/2 md:-translate-x-1/2 flex items-center bg-black/30 px-4 py-2 rounded-full">
-            <span class="text-white text-xs md:text-sm mr-2">Một sản phẩm của</span>
-            <img src="https://picsum.photos/id/66/60/30" alt="Meygroup Logo" class="h-4 md:h-5">
-        </div>-->
+
+        <div class="left-logo">
+            <img src="https://via.placeholder.com/50/FF0000/FFFFFF?text=CL" class="rounded-full shadow-lg border-2 border-white" alt="Logo">
+            <div class="flex flex-col text-left">
+                <span class="text-white text-sm md:text-lg font-bold drop-shadow-md leading-none">Chanel</span>
+                <span class="text-white text-sm md:text-lg font-bold drop-shadow-md leading-none">Lou</span>
+            </div>
+        </div>
+        <div class="right-logo">
+            <div class="flex flex-col text-right mr-2">
+                <span class="text-white text-sm md:text-lg font-bold drop-shadow-md leading-none">可</span>
+                <span class="text-white text-sm md:text-lg font-bold drop-shadow-md leading-none">楼</span>
+            </div>
+            <img src="https://via.placeholder.com/50/FF0000/FFFFFF?text=CL" class="rounded-full shadow-lg border-2 border-white" alt="Emoji">
+        </div>
     </header>
 
-    <!-- Main Navigation Bar -->
-    <nav class="bg-white shadow-sm py-3 border-b border-gray-200">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-            <!-- Left: Logo and Date -->
-            <div class="flex items-center mb-3 md:mb-0">
-                <a href="#" class="flex flex-col items-center md:items-start mr-6">
-                    <span class="text-red-600 text-2xl font-extrabold mr-1">VN<span
-                            class="inline-block border-2 border-red-600 px-0.5 rounded-sm">E</span>XPRESS</span>
-                    <span class="text-gray-500 text-xs mt-0.5">Báo tiếng Việt nhiều người xem nhất</span>
-                </a>
-                <span class="text-gray-600 text-sm hidden md:block">Thứ ba, 2/12/2025</span>
-            </div>
-
-            <!-- Right: Nav Links and Icons -->
-            <div class="flex items-center space-x-4 text-sm">
-                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Mới nhất</a>
-                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Tin theo khu vực</a>
-                <a href="#" class="flex items-center text-gray-700 hover:text-red-600 whitespace-nowrap">
-                    <span class="text-red-600 mr-1">🌐</span> International
-                </a>
-                <button class="text-gray-700 hover:text-red-600">🔍</button>
-                <a href="#" class="flex items-center text-gray-700 hover:text-red-600 whitespace-nowrap">
-                    <span class="mr-1">👤</span> Đăng nhập
-                </a>
-                <button class="text-gray-700 hover:text-red-600">🔔</button>
+    <div class="sticky top-0 z-[100] bg-white border-b border-gray-200 shadow-sm">
+        <div class="container mx-auto px-4 py-2 flex items-center justify-between">
+            <a href="#" class="flex items-end group">
+                <span class="text-[#9f224e] text-3xl font-black tracking-tighter group-hover:opacity-80 transition">VN<span class="inline-block border-[2px] border-[#9f224e] px-0.5 rounded-[1px] text-[0.8em] align-middle mx-[1px]">E</span>XPRESS</span>
+            </a>
+            
+            <div class="flex items-center text-sm text-gray-600 gap-4">
+                <span class="hidden md:inline border-r pr-4">Thứ ba, 2/12/2025</span>
+                <a href="#" class="hover:text-[#9f224e] flex items-center gap-1"><span class="text-xs">⚡</span> Mới nhất</a>
+                <a href="#" class="hover:text-[#9f224e] hidden sm:block">International</a>
+                <button class="hover:text-[#9f224e] text-lg">🔍</button>
+                <a href="#" class="border border-gray-300 px-3 py-1 rounded text-xs hover:bg-gray-50">Đăng nhập</a>
             </div>
         </div>
-    </nav>
 
-    <!-- Secondary Navigation Bar -->
-    <nav class="bg-white py-2 shadow-sm border-b border-gray-200">
-        <div class="container mx-auto px-4 flex items-center justify-between">
-            <div class="flex items-center space-x-4 md:space-x-6 overflow-x-auto no-scrollbar py-1">
-                <a href="#" class="flex items-center text-gray-700 hover:text-red-600 whitespace-nowrap">
-                    <span class="mr-1">🏠</span> VnE-GO
-                    <span class="relative flex h-2 w-2 ml-1">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                    </span>
-                </a>
-                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Thời sự</a>
-                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Thế giới</a>
-                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Kinh doanh</a>
-                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Khoa học công nghệ</a>
-                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Góc nhìn</a>
-                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Bất động sản</a>
-                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Sức khỏe</a>
-                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Thể thao</a>
-                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Giải trí</a>
-                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Pháp luật</a>
-                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Giáo dục</a>
-                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Đời sống</a>
-                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Xe</a>
-                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Du lịch</a>
-                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Ý kiến</a>
-                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Tâm sự</a>
-                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Thư giãn</a>
-            </div>
-            <div class="flex items-center ml-4 space-x-2">
-                <button class="text-gray-700 hover:text-red-600 text-xl">☰</button>
-                <button class="text-gray-700 hover:text-red-600 text-xl">❯</button>
-            </div>
-        </div>
-    </nav>
+        <nav class="border-t border-gray-100">
+            <div class="container mx-auto px-0 md:px-4">
+                <div class="flex items-center justify-between">
+                    <a href="#" class="p-3 border-b-2 border-[#9f224e] bg-gray-50 hover:bg-gray-100 transition">
+                        <svg class="w-5 h-5 text-[#9f224e]" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+                    </a>
+                    
+                    <div class="flex-1 overflow-x-auto no-scrollbar flex items-center text-[14px] font-medium text-gray-700">
+                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Thời sự</a>
+                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Góc nhìn</a>
+                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Thế giới</a>
+                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Kinh doanh</a>
+                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Bất động sản</a>
+                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Khoa học</a>
+                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Giải trí</a>
+                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Thể thao</a>
+                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Pháp luật</a>
+                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Giáo dục</a>
+                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Sức khỏe</a>
+                    </div>
 
-    <!-- Main Content Area -->
-    <main class="container mx-auto px-4 py-6">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <!-- Left Article (Large Image + Text) -->
-            <article class="lg:col-span-2 bg-white rounded-lg overflow-hidden">
-                <img src="https://picsum.photos/id/64/800/500" alt="Man in suit"
-                    class="w-full h-auto object-cover mb-4 rounded-t-lg">
-                <div class="p-4">
-                    <h2 class="text-2xl md:text-3xl font-bold mb-3 leading-tight">Khai báo một lần cho tất cả dịch vụ
-                        công</h2>
-                    <p class="text-gray-700 text-base md:text-lg mb-4">
-                        Bộ trưởng Nguyễn Mạnh Hùng nói Luật Chuyển đổi số áp dụng nguyên tắc khai báo một lần, dữ liệu
-                        liên thông giúp người dân giảm giấy tờ và dùng dịch vụ công thuận tiện.
-                    </p>
-                    <p class="text-gray-600 text-sm md:text-base mb-4">
-                        Chiều 1/12, giải trình trước Quốc hội về dự án Luật Chuyển đổi số, Bộ trưởng Bộ Khoa học và Công
-                        nghệ Nguyễn Mạnh ...
-                    </p>
-                    <a href="#" class="text-red-600 hover:underline text-sm md:text-base font-semibold">Thời sự</a>
+                    <button class="p-3 text-gray-500 hover:text-[#9f224e]">
+                        ☰ <span class="text-xs hidden md:inline ml-1">Tất cả</span>
+                    </button>
                 </div>
-            </article>
+            </div>
+        </nav>
+    </div>
 
-            <!-- Right Article (Smaller Image) -->
-            <aside class="lg:col-span-1 bg-white rounded-lg overflow-hidden">
-                <img src="https://picsum.photos/id/1060/400/600" alt="Building with balconies"
-                    class="w-full h-auto object-cover rounded-lg">
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <div class="lg:col-span-9">
+                <section class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-8 border-b border-gray-200 pb-8">
+                    <div class="md:col-span-8 group cursor-pointer">
+                        <div class="overflow-hidden rounded bg-gray-100">
+                            <img src="https://picsum.photos/id/64/800/500" alt="Top Story" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500 ease-in-out">
+                        </div>
+                    </div>
+                    <div class="md:col-span-4 flex flex-col justify-start">
+                        <h2 class="text-2xl md:text-3xl font-black font-merriweather leading-tight mb-3 hover:text-[#9f224e] cursor-pointer">
+                            Khai báo một lần cho tất cả dịch vụ công quốc gia
+                        </h2>
+                        <p class="text-gray-600 text-[15px] leading-relaxed mb-4">
+                            Bộ trưởng Nguyễn Mạnh Hùng nhấn mạnh Luật Chuyển đổi số áp dụng nguyên tắc "khai báo một lần", dữ liệu liên thông giúp giảm tải giấy tờ.
+                        </p>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <span class="text-[#9f224e] font-bold text-xs uppercase tracking-wider">Thời sự</span>
+                            <span class="text-gray-400 text-xs ml-2">2 giờ trước</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <article class="flex flex-col group">
+                        <div class="overflow-hidden rounded mb-3 h-40">
+                             <img src="https://picsum.photos/id/1015/400/250" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        </div>
+                        <h3 class="font-bold text-lg leading-snug hover:text-[#9f224e]">
+                            Thung lũng Silicon sa thải hàng loạt nhân sự AI
+                        </h3>
+                    </article>
+                    <article class="flex flex-col group">
+                        <div class="overflow-hidden rounded mb-3 h-40">
+                             <img src="https://picsum.photos/id/1025/400/250" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        </div>
+                        <h3 class="font-bold text-lg leading-snug hover:text-[#9f224e]">
+                            Giá xăng dầu tiếp tục giảm sâu phiên thứ 3
+                        </h3>
+                    </article>
+                    <article class="flex flex-col group">
+                        <div class="overflow-hidden rounded mb-3 h-40">
+                             <img src="https://picsum.photos/id/1035/400/250" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        </div>
+                        <h3 class="font-bold text-lg leading-snug hover:text-[#9f224e]">
+                            Đội tuyển Việt Nam chốt danh sách đi châu Âu
+                        </h3>
+                    </article>
+                </section>
+            </div>
+
+            <aside class="lg:col-span-3 border-l border-gray-100 lg:pl-6 space-y-8">
+                
+                <div class="bg-gray-50 rounded p-2 text-center">
+                    <span class="text-xs text-gray-400 block mb-1 text-right">Quảng cáo</span>
+                    <img src="https://picsum.photos/id/1060/300/500" alt="Vertical Ad" class="w-full h-auto object-cover rounded mx-auto hover:opacity-90 transition">
+                </div>
+
+                <div>
+                    <h4 class="text-[#9f224e] font-bold border-b-2 border-[#9f224e] inline-block mb-4 pb-1">Đọc nhiều</h4>
+                    <ul class="space-y-4">
+                        <li class="group border-b border-gray-100 pb-2">
+                            <span class="text-2xl font-bold text-gray-200 group-hover:text-[#9f224e] mr-2">1</span>
+                            <a href="#" class="text-gray-800 font-medium hover:text-[#9f224e]">Vụ án Vạn Thịnh Phát: Diễn biến mới nhất tại tòa</a>
+                        </li>
+                        <li class="group border-b border-gray-100 pb-2">
+                            <span class="text-2xl font-bold text-gray-200 group-hover:text-[#9f224e] mr-2">2</span>
+                            <a href="#" class="text-gray-800 font-medium hover:text-[#9f224e]">Giá vàng hôm nay bất ngờ quay đầu</a>
+                        </li>
+                        <li class="group border-b border-gray-100 pb-2">
+                            <span class="text-2xl font-bold text-gray-200 group-hover:text-[#9f224e] mr-2">3</span>
+                            <a href="#" class="text-gray-800 font-medium hover:text-[#9f224e]">Review iPhone 16: Có đáng nâng cấp?</a>
+                        </li>
+                    </ul>
+                </div>
             </aside>
         </div>
     </main>
 
-    <!-- Scroll to Top Button -->
-    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-        class="fixed bottom-8 right-8 bg-gray-700 text-white p-3 rounded-full shadow-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition-all duration-300">
-        <span class="text-xl">⬆</span>
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 bg-[#9f224e] text-white p-3 rounded shadow-lg hover:bg-[#7d1b3d] transition-all z-50 opacity-80 hover:opacity-100">
+        ⬆
     </button>
-
 </body>
-
 </html>
