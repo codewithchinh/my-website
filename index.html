@@ -1,200 +1,201 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VNEXPRESS - News Portal Redesign</title>
+    <title>VNEXPRESS - News Portal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* GIỮ NGUYÊN CSS BANNER CỦA BẠN */
-        .banner-bg {
-            position: relative;
-            background-image: url('https://scontent.cdninstagram.com/v/t51.82787-15/551199762_17846294055569276_741117639464511513_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ig_cache_key=MzcyNDgxMzM5MTUxMDAyMDUyNQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE1OTh4ODk5LnNkci5DMyJ9&_nc_ohc=s-SUM6kM5bcQ7kNvwEkBLka&_nc_oc=Adlfl8-LYQVIB6VDN30OefK6hSLLPTvCqPPoQT4JVxGTH7m5t1la6WdQwwwjCGKFm5eM5DvLLPFtR19HoiFmG_nb&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=1L7ndc80dz5CCvYSlM_-tQ&oh=00_AfhY2aU4t0NfVIo0FFPcPnpTgjEiHFlsXRnK9jLV1gLsIA&oe=6933B2B9');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+        /* Điều chỉnh cho phần danh mục */
+        .nav-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Tự động điều chỉnh số cột */
+            gap: 16px;
+            padding: 8px;
         }
 
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-        .left-logo, .right-logo {
-            position: absolute;
-            bottom: -30px;
-            z-index: 50; /* Giảm z-index để không che menu */
-            display: flex;
-            align-items: center;
-        }
-        .left-logo { left: 10px; }
-        .right-logo { right: 10px; }
-        .left-logo img, .right-logo img { width: 30px; height: 30px; margin-right: 8px; }
-        
-        @media (min-width: 1024px) {
-            .left-logo { left: 20px; bottom: 20px; } /* Chỉnh lại vị trí cho đẹp hơn */
-            .right-logo { right: 20px; bottom: 20px; }
-            .left-logo img, .right-logo img { width: 50px; height: 50px; } /* Logo to hơn trên PC */
-            .left-logo span, .right-logo span { font-size: 20px; }
+        .nav-links a {
+            text-align: center;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #333;
+            transition: background-color 0.3s ease;
         }
 
-        /* Font chữ giống báo chí */
-        .font-merriweather { font-family: 'Merriweather', serif; }
+        .nav-links a:hover {
+            background-color: #ff6600; /* Màu sắc khi hover */
+            color: white;
+        }
+
+        /* Cải thiện sự cân đối cho bài viết */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        .article {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .article img {
+            width: 100%;
+            height: auto;
+        }
+
+        .article:hover {
+            transform: translateY(-10px); /* Hiệu ứng di chuyển nhẹ khi hover */
+        }
+
+        .article .content {
+            padding: 20px;
+            color: #555;
+        }
+
+        .article .content h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .article .content p {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        /* Đảm bảo responsive cho mọi kích thước màn hình */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr 1fr; /* Hai cột cho màn hình nhỏ */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-content {
+                grid-template-columns: 1fr; /* Một cột cho màn hình rất nhỏ */
+            }
+        }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 
-<body class="font-sans antialiased text-[#333] bg-[#fcfcfc]">
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
 
-    <header class="relative w-full h-48 md:h-72 lg:h-80 overflow-hidden banner-bg flex items-center justify-center shadow-md">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
-        
-        <div class="relative z-10 flex flex-col items-center w-full max-w-7xl px-4 text-center">
-            <h1 class="text-white text-2xl md:text-5xl font-bold mb-2 drop-shadow-lg uppercase font-merriweather">CLouvie FC VIET NAM</h1>
-            <p class="text-white text-lg md:text-2xl font-light tracking-[0.2em] drop-shadow-md">CLou's fanpage in VN</p>
-        </div>
+    <!-- Top Banner Ad -->
+    <header class="relative w-full h-40 md:h-60 lg:h-72 overflow-hidden banner-bg flex items-center justify-center">
+        <div class="absolute inset-0 bg-gradient-to-r from-amber-900/70 via-amber-700/50 to-amber-900/70"></div>
+        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-7xl px-4">
+            <div class="left-logo">
+                <img src="https://placekitten.com/30/30" alt="CL Emoji"> <!-- Logo CL -->
+                <span class="text-white text-lg md:text-xl font-semibold tracking-wider">Chanel</span>
+                <span class="text-white text-lg md:text-xl font-semibold tracking-wider">Lou</span>
+            </div>
 
-        <div class="left-logo">
-            <img src="https://via.placeholder.com/50/FF0000/FFFFFF?text=CL" class="rounded-full shadow-lg border-2 border-white" alt="Logo">
-            <div class="flex flex-col text-left">
-                <span class="text-white text-sm md:text-lg font-bold drop-shadow-md leading-none">Chanel</span>
-                <span class="text-white text-sm md:text-lg font-bold drop-shadow-md leading-none">Lou</span>
+            <!-- Center Text -->
+            <div class="text-center mb-4 md:mb-0">
+                <h1 class="text-white text-xl md:text-3xl font-bold mb-1">CLouvie FC VIET NAM</h1>
+                <p class="text-white text-2xl md:text-4xl font-extrabold tracking-wide">CLou's fanpage in VN</p>
             </div>
-        </div>
-        <div class="right-logo">
-            <div class="flex flex-col text-right mr-2">
-                <span class="text-white text-sm md:text-lg font-bold drop-shadow-md leading-none">可</span>
-                <span class="text-white text-sm md:text-lg font-bold drop-shadow-md leading-none">楼</span>
-            </div>
-            <img src="https://via.placeholder.com/50/FF0000/FFFFFF?text=CL" class="rounded-full shadow-lg border-2 border-white" alt="Emoji">
         </div>
     </header>
 
-    <div class="sticky top-0 z-[100] bg-white border-b border-gray-200 shadow-sm">
-        <div class="container mx-auto px-4 py-2 flex items-center justify-between">
-            <a href="#" class="flex items-end group">
-                <span class="text-[#9f224e] text-3xl font-black tracking-tighter group-hover:opacity-80 transition">VN<span class="inline-block border-[2px] border-[#9f224e] px-0.5 rounded-[1px] text-[0.8em] align-middle mx-[1px]">E</span>XPRESS</span>
-            </a>
-            
-            <div class="flex items-center text-sm text-gray-600 gap-4">
-                <span class="hidden md:inline border-r pr-4">Thứ ba, 2/12/2025</span>
-                <a href="#" class="hover:text-[#9f224e] flex items-center gap-1"><span class="text-xs">⚡</span> Mới nhất</a>
-                <a href="#" class="hover:text-[#9f224e] hidden sm:block">International</a>
-                <button class="hover:text-[#9f224e] text-lg">🔍</button>
-                <a href="#" class="border border-gray-300 px-3 py-1 rounded text-xs hover:bg-gray-50">Đăng nhập</a>
+    <!-- Main Navigation Bar -->
+    <nav class="bg-white shadow-sm py-3 border-b border-gray-200">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+            <div class="flex items-center mb-3 md:mb-0">
+                <a href="#" class="flex flex-col items-center md:items-start mr-6">
+                    <span class="text-red-600 text-2xl font-extrabold mr-1">VN<span
+                            class="inline-block border-2 border-red-600 px-0.5 rounded-sm">E</span>XPRESS</span>
+                    <span class="text-gray-500 text-xs mt-0.5">Báo tiếng Việt nhiều người xem nhất</span>
+                </a>
+                <span class="text-gray-600 text-sm hidden md:block">Thứ ba, 2/12/2025</span>
+            </div>
+            <div class="flex items-center space-x-4 text-sm">
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Mới nhất</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Tin theo khu vực</a>
+                <a href="#" class="flex items-center text-gray-700 hover:text-red-600 whitespace-nowrap">
+                    <span class="text-red-600 mr-1">🌐</span> International
+                </a>
+                <button class="text-gray-700 hover:text-red-600">🔍</button>
+                <a href="#" class="flex items-center text-gray-700 hover:text-red-600 whitespace-nowrap">
+                    <span class="mr-1">👤</span> Đăng nhập
+                </a>
+                <button class="text-gray-700 hover:text-red-600">🔔</button>
             </div>
         </div>
+    </nav>
 
-        <nav class="border-t border-gray-100">
-            <div class="container mx-auto px-0 md:px-4">
-                <div class="flex items-center justify-between">
-                    <a href="#" class="p-3 border-b-2 border-[#9f224e] bg-gray-50 hover:bg-gray-100 transition">
-                        <svg class="w-5 h-5 text-[#9f224e]" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
-                    </a>
-                    
-                    <div class="flex-1 overflow-x-auto no-scrollbar flex items-center text-[14px] font-medium text-gray-700">
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Thời sự</a>
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Góc nhìn</a>
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Thế giới</a>
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Kinh doanh</a>
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Bất động sản</a>
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Khoa học</a>
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Giải trí</a>
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Thể thao</a>
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Pháp luật</a>
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Giáo dục</a>
-                        <a href="#" class="px-3 py-3 hover:text-[#9f224e] whitespace-nowrap">Sức khỏe</a>
-                    </div>
-
-                    <button class="p-3 text-gray-500 hover:text-[#9f224e]">
-                        ☰ <span class="text-xs hidden md:inline ml-1">Tất cả</span>
-                    </button>
-                </div>
+    <!-- Secondary Navigation Bar -->
+    <nav class="bg-white py-2 shadow-sm border-b border-gray-200">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center space-x-4 md:space-x-6 overflow-x-auto no-scrollbar py-1">
+                <a href="#" class="flex items-center text-gray-700 hover:text-red-600 whitespace-nowrap">
+                    <span class="mr-1">🏠</span> VnE-GO
+                    <span class="relative flex h-2 w-2 ml-1">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                    </span>
+                </a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Thời sự</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Thế giới</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Kinh doanh</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Khoa học công nghệ</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Góc nhìn</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Bất động sản</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Sức khỏe</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Thể thao</a>
+                <a href="#" class="text-gray-700 hover:text-red-600 whitespace-nowrap">Giải trí</a>
             </div>
-        </nav>
-    </div>
-
-    <main class="container mx-auto px-4 py-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            
-            <div class="lg:col-span-9">
-                <section class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-8 border-b border-gray-200 pb-8">
-                    <div class="md:col-span-8 group cursor-pointer">
-                        <div class="overflow-hidden rounded bg-gray-100">
-                            <img src="https://picsum.photos/id/64/800/500" alt="Top Story" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500 ease-in-out">
-                        </div>
-                    </div>
-                    <div class="md:col-span-4 flex flex-col justify-start">
-                        <h2 class="text-2xl md:text-3xl font-black font-merriweather leading-tight mb-3 hover:text-[#9f224e] cursor-pointer">
-                            Khai báo một lần cho tất cả dịch vụ công quốc gia
-                        </h2>
-                        <p class="text-gray-600 text-[15px] leading-relaxed mb-4">
-                            Bộ trưởng Nguyễn Mạnh Hùng nhấn mạnh Luật Chuyển đổi số áp dụng nguyên tắc "khai báo một lần", dữ liệu liên thông giúp giảm tải giấy tờ.
-                        </p>
-                        <div class="mt-auto pt-4 border-t border-gray-100">
-                            <span class="text-[#9f224e] font-bold text-xs uppercase tracking-wider">Thời sự</span>
-                            <span class="text-gray-400 text-xs ml-2">2 giờ trước</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                    <article class="flex flex-col group">
-                        <div class="overflow-hidden rounded mb-3 h-40">
-                             <img src="https://picsum.photos/id/1015/400/250" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                        </div>
-                        <h3 class="font-bold text-lg leading-snug hover:text-[#9f224e]">
-                            Thung lũng Silicon sa thải hàng loạt nhân sự AI
-                        </h3>
-                    </article>
-                    <article class="flex flex-col group">
-                        <div class="overflow-hidden rounded mb-3 h-40">
-                             <img src="https://picsum.photos/id/1025/400/250" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                        </div>
-                        <h3 class="font-bold text-lg leading-snug hover:text-[#9f224e]">
-                            Giá xăng dầu tiếp tục giảm sâu phiên thứ 3
-                        </h3>
-                    </article>
-                    <article class="flex flex-col group">
-                        <div class="overflow-hidden rounded mb-3 h-40">
-                             <img src="https://picsum.photos/id/1035/400/250" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                        </div>
-                        <h3 class="font-bold text-lg leading-snug hover:text-[#9f224e]">
-                            Đội tuyển Việt Nam chốt danh sách đi châu Âu
-                        </h3>
-                    </article>
-                </section>
-            </div>
-
-            <aside class="lg:col-span-3 border-l border-gray-100 lg:pl-6 space-y-8">
-                
-                <div class="bg-gray-50 rounded p-2 text-center">
-                    <span class="text-xs text-gray-400 block mb-1 text-right">Quảng cáo</span>
-                    <img src="https://picsum.photos/id/1060/300/500" alt="Vertical Ad" class="w-full h-auto object-cover rounded mx-auto hover:opacity-90 transition">
-                </div>
-
-                <div>
-                    <h4 class="text-[#9f224e] font-bold border-b-2 border-[#9f224e] inline-block mb-4 pb-1">Đọc nhiều</h4>
-                    <ul class="space-y-4">
-                        <li class="group border-b border-gray-100 pb-2">
-                            <span class="text-2xl font-bold text-gray-200 group-hover:text-[#9f224e] mr-2">1</span>
-                            <a href="#" class="text-gray-800 font-medium hover:text-[#9f224e]">Vụ án Vạn Thịnh Phát: Diễn biến mới nhất tại tòa</a>
-                        </li>
-                        <li class="group border-b border-gray-100 pb-2">
-                            <span class="text-2xl font-bold text-gray-200 group-hover:text-[#9f224e] mr-2">2</span>
-                            <a href="#" class="text-gray-800 font-medium hover:text-[#9f224e]">Giá vàng hôm nay bất ngờ quay đầu</a>
-                        </li>
-                        <li class="group border-b border-gray-100 pb-2">
-                            <span class="text-2xl font-bold text-gray-200 group-hover:text-[#9f224e] mr-2">3</span>
-                            <a href="#" class="text-gray-800 font-medium hover:text-[#9f224e]">Review iPhone 16: Có đáng nâng cấp?</a>
-                        </li>
-                    </ul>
-                </div>
-            </aside>
         </div>
+    </nav>
+
+    <!-- Phần Danh Mục -->
+    <nav class="bg-white py-2 shadow-sm border-b border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="nav-links">
+                <a href="#">VnE-GO</a>
+                <a href="#">Thời sự</a>
+                <a href="#">Thế giới</a>
+                <a href="#">Kinh doanh</a>
+                <a href="#">Khoa học công nghệ</a>
+                <a href="#">Góc nhìn</a>
+                <a href="#">Bất động sản</a>
+                <a href="#">Sức khỏe</a>
+                <a href="#">Thể thao</a>
+                <a href="#">Giải trí</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Phần Bài Viết -->
+    <main class="main-content container mx-auto px-4 py-6">
+        <article class="article">
+            <img src="https://picsum.photos/id/64/800/500" alt="Man in suit">
+            <div class="content">
+                <h2>Khai báo một lần cho tất cả dịch vụ công</h2>
+                <p>Bộ trưởng Nguyễn Mạnh Hùng nói Luật Chuyển đổi số áp dụng nguyên tắc khai báo một lần, dữ liệu liên thông giúp người dân giảm giấy tờ và dùng dịch vụ công thuận tiện.</p>
+            </div>
+        </article>
+        <article class="article">
+            <img src="https://picsum.photos/id/1060/400/600" alt="Building with balconies">
+            <div class="content">
+                <h2>Đổi mới công nghệ trong giáo dục</h2>
+                <p>Giới chuyên gia cho rằng việc áp dụng công nghệ vào giáo dục giúp học sinh phát triển tư duy và kỹ năng cần thiết trong thời đại số.</p>
+            </div>
+        </article>
     </main>
 
-    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 bg-[#9f224e] text-white p-3 rounded shadow-lg hover:bg-[#7d1b3d] transition-all z-50 opacity-80 hover:opacity-100">
-        ⬆
+    <!-- Scroll to Top Button -->
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="fixed bottom-8 right-8 bg-gray-700 text-white p-3 rounded-full shadow-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition-all duration-300">
+        <span class="text-xl">⬆</span>
     </button>
+
 </body>
+
 </html>
